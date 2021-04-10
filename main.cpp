@@ -2,23 +2,28 @@
 using namespace std;
 
 int main(){
-        long long N;
-        cin >> N;
-        long long arr[N];
-        for(int i=0; i<N; i++){
-                cin>>arr[i];
+        vector<int> v;
+        int n, nums,position,a,b, size;
+        cin >> n;
+        for(int i=0; i < n; i++){
+                cin >> nums;
+                v.push_back(nums);
         }
-         set<long long> s;
-         s.insert(-1);
-         for(int i=0; i<N; i++){
-                 s.insert(arr[i]);
-                 auto it = s.find(arr[i]);
-                 cout << (*--it) << "\n";
-         }
+        
+        cin >> position >> a >> b;
+        
+         v.erase(v.begin()+(position-1));
+         v.erase(v.begin()+a-1, v.begin()+b-1);
+        
+        size = v.size();
+        cout << size << "\n";
+
+        for(int j=0; j<size; j++){
+                cout << v[j] << " " ;
+        }
+        
+
+        return 0;
 
 
-
-  return 0;
 }
-
-      
